@@ -1,16 +1,19 @@
 <html>
   <head>
+    <link rel = "stylesheet" href "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel = "stylesheet" href "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <title>Younjin's Blog!</title>
   </head>
   <body>
     <div>
       <h1><a href="">Younjin's Blog</a></h1>
     </div>
-
+    {% for post in posts%}
     <div>
-      <p>published: 10.04.2016, 4:24</p>
-      <h2><a href="">My first post</a></h2>
-      <p>처음 해 보는 html 작업입니다. 잘부탁드려요. 헬로 월드!</p>
+      <p>published: {{post.published_date}}</p>
+      <h2><a href="">{{post.title}}</a></h2>
+      <p>{{post.text|linebreaksbr}}!</p>
     </div>
+    {% endfor %}
   </body>
 </html>
